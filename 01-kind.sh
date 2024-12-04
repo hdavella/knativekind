@@ -46,4 +46,8 @@ nodes:
   - containerPort: 31080 # expose port 31380 of the node to port 80 on the host, later to be use by kourier or contour ingress
     listenAddress: 127.0.0.1
     hostPort: 80
+- role: worker
+  image: ${KIND_BASE}:${K8S_VERSION}
+- role: worker
+  image: ${KIND_BASE}:${K8S_VERSION}
 EOF

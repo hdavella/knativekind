@@ -3,7 +3,7 @@
 set -eo pipefail
 
 kindVersion=$(kind version);
-K8S_VERSION=${k8sVersion:-v1.30.0}
+K8S_VERSION=${k8sVersion:-v1.31.2}
 KIND_BASE=${KIND_BASE:-kindest/node}
 CLUSTER_NAME=${KIND_CLUSTER_NAME:-knative}
 KIND_VERSION=${KIND_VERSION:-v0.25}
@@ -46,8 +46,4 @@ nodes:
   - containerPort: 31080 # expose port 31380 of the node to port 80 on the host, later to be use by kourier or contour ingress
     listenAddress: 127.0.0.1
     hostPort: 80
-- role: worker
-  image: ${KIND_BASE}:${K8S_VERSION}
-- role: worker
-  image: ${KIND_BASE}:${K8S_VERSION}
 EOF

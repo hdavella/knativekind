@@ -6,7 +6,7 @@ kindVersion=$(kind version);
 K8S_VERSION=${k8sVersion:-v1.31.2}
 KIND_BASE=${KIND_BASE:-kindest/node}
 CLUSTER_NAME=${KIND_CLUSTER_NAME:-knative}
-KIND_VERSION=${KIND_VERSION:-v0.25.0}
+KIND_VERSION=${KIND_VERSION:-v0.25}
 
 echo "KinD version is ${kindVersion}"
 if [[ ! $kindVersion =~ "${KIND_VERSION}." ]]; then

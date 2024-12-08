@@ -51,6 +51,6 @@ nodes:
     listenAddress: 127.0.0.1
     hostPort: 80
   extraMounts:
-   - hostPath: /dev/mapper
-      containerPath: /dev/mapper
+  - hostPath: /dev/mapper
+    containerPath: /dev/mapper
 EOF

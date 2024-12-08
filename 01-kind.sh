@@ -36,7 +36,7 @@ fi
 
 echo "Using image ${KIND_BASE}:${K8S_VERSION}"
 KIND_CLUSTER=$(mktemp)
-cat <<EOF | kind create cluster --name ${CLUSTER_NAME} --wait 120s --config=-
+cat <<EOF | kind create cluster --name ${CLUSTER_NAME} --wait 180s --config=-
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:

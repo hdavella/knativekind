@@ -45,9 +45,9 @@ containerdConfigPatches:
  snapshotter = "native"
 nodes:
 - role: control-plane
-  extraMounts:
-  - hostPath: /dev/mapper
-    containerPath: /dev/mapper
+   extraMounts:
+   - hostPath: /dev/mapper
+      containerPath: /dev/mapper
   image: ${KIND_BASE}:${K8S_VERSION}
   extraPortMappings:
   - containerPort: 31080 # expose port 31380 of the node to port 80 on the host, later to be use by kourier or contour ingress

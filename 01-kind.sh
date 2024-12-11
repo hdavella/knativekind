@@ -3,7 +3,7 @@
 set -eo pipefail
 
 kindVersion=$(kind version);
-K8S_VERSION=${k8sVersion:latest}
+K8S_VERSION=${k8sVersion:-v1.31.2}
 KIND_BASE=${KIND_BASE:-kindest/node}
 CLUSTER_NAME=${KIND_CLUSTER_NAME:-knative}
 KIND_VERSION=${KIND_VERSION:-v0.25}
@@ -45,6 +45,9 @@ containerdConfigPatches:
  snapshotter = "native"
 nodes:
 - role: control-plane
+  extraMounts:
+  - hostPath: /dev/mapper
+    containerPath: /dev/mapper
   image: ${KIND_BASE}:${K8S_VERSION}
   extraPortMappings:
   - containerPort: 31080 # expose port 31380 of the node to port 80 on the host, later to be use by kourier or contour ingress

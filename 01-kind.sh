@@ -3,7 +3,7 @@
 set -eo pipefail
 
 kindVersion=$(kind version);
-K8S_VERSION=${k8sVersion:-latest}
+K8S_VERSION=${k8sVersion:latest}
 KIND_BASE=${KIND_BASE:-kindest/node}
 CLUSTER_NAME=${KIND_CLUSTER_NAME:-knative}
 KIND_VERSION=${KIND_VERSION:-v0.25}
